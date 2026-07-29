@@ -1,31 +1,18 @@
-import { TextInput, StyleSheet, View, Text } from "react-native";
-import { COLORS } from "@/constants/config";
+import { TextInput, StyleSheet } from "react-native";
 
-export default function Input({ placeholder, secure, value, onChangeText, error }: any) {
+export default function Input({ placeholder, secure, value, onChangeText }: any) {
   return (
-    <View style={styles.container}>
-      <TextInput
-        placeholder={placeholder}
-        secureTextEntry={secure}
-        value={value}
-        onChangeText={onChangeText}
-        style={[styles.input, error && styles.inputError]}
-        placeholderTextColor="#9CA3AF"
-      />
-      {error && <Text style={styles.errorText}>{error}</Text>}
-    </View>
+    <TextInput
+      placeholder={placeholder}
+      secureTextEntry={secure}
+      value={value}
+      onChangeText={onChangeText}
+      style={styles.input}
+      placeholderTextColor="#9CA3AF"
+    />
   );
 }
 
 const styles = StyleSheet.create({
-  container: { marginBottom: 12 },
-  input: {
-    backgroundColor: COLORS.inputBg,
-    padding: 14,
-    borderRadius: 12,
-    fontSize: 15,
-    color: COLORS.textDark,
-  },
-  inputError: { borderWidth: 1, borderColor: COLORS.error },
-  errorText: { color: COLORS.error, fontSize: 12, marginTop: 4, marginLeft: 4 },
+  input: { backgroundColor: "#F3F4F6", padding: 14, borderRadius: 12, marginBottom: 12, fontSize: 15 }
 });

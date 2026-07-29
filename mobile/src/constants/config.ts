@@ -3,7 +3,6 @@ export const COLORS = {
   background: "#F9FAFB",
   textDark: "#1F2937",
   textGray: "#6B7280",
-  cardBg: "#FFFFFF",
-  inputBg: "#F3F4F6",
-  error: "#EF4444",
+  border: "#E5E7EB",
+  error: "#DC2626",
 };
