@@ -1,25 +1,20 @@
-exports.validateRegister = (req, res, next) => {
+const validateRegister = (req, res, next) => {
   const { fullName, email, password } = req.body;
-
   if (!fullName || !email || !password) {
-    return res.status(400).json({ error: "Tous les champs sont requis" });
+    return res.status(400).json({ error: 'Tous les champs sont requis.' });
   }
-
   if (password.length < 6) {
-    return res
-      .status(400)
-      .json({ error: "Mot de passe minimum 6 caractères" });
+    return res.status(400).json({ error: 'Le mot de passe doit contenir au moins 6 caractères.' });
   }
-
   next();
 };
 
-exports.validateLogin = (req, res, next) => {
+const validateLogin = (req, res, next) => {
   const { email, password } = req.body;
-
   if (!email || !password) {
-    return res.status(400).json({ error: "Champs requis" });
+    return res.status(400).json({ error: 'Email et mot de passe requis.' });
   }
-
   next();
 };
+
+module.exports = { validateRegister, validateLogin };
